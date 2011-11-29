@@ -1,9 +1,9 @@
-package com.hellowworld;
+package com.helloworld;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class AndroidTestActivity extends Activity {
+public class AkActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
