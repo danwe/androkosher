@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, AndroKActivity!</string>
+    <string name="dan">androkosher first Registration</string>
     <string name="app_name">AndroK</string>
-
+    <string name="user">usa</string>
+    <string name="user1">user</string>
+    <string name="password">password</string>
+    <string name="androkosher">androkosher</string>
+    <string name="login_title">login to the app</string>
+	<string name="login_text">\
+	Hello dan    
+	</string>
+	<string name="login_label">login</string>
+	
+	
+    
 </resources>
