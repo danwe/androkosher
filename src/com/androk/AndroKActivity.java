@@ -29,10 +29,12 @@ public class AndroKActivity extends Activity implements OnClickListener
 
 	public void onClick(View v)
 	{
+		
 		Intent i = new Intent(this, login.class);
 		startActivity(i);
 	
 	}
+	
 }
 
 

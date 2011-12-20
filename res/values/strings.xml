@@ -9,6 +9,12 @@
     <string name="androkosher">androkosher</string>
     <string name="login_title">login to the app</string>
 	<string name="login_text">\
+	<string name="app_name">Sudoku</string>
+	<string name="main_title">Android Sudoku</string>
+	<string name="continue_label">Continue</string>
+	<string name="new_game_label">New Game</string>
+	<string name="about_label">About</string>
+	<string name="exit_label">Exit</string>
 	Hello dan    
 	</string>
 	<string name="login_label">login</string>
