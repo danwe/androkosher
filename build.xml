@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="AndroK">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Google APIs [Android 2.3.3].libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/platforms/android-10/android.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/add-ons/addon-google_apis-google_inc_-10/libs/usb.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/add-ons/addon-google_apis-google_inc_-10/libs/maps.jar"/>
+    </path>
+    <path id="com.android.ide.eclipse.adt.LIBRARIES.libraryclasspath"/>
+    <path id="GAL GWT Maps.libraryclasspath">
+        <pathelement location=".google_apis/gwt-maps-1.1.0/gwt-maps-1.1.0/gwt-maps.jar"/>
+    </path>
+    <path id="Books.libraryclasspath">
+        <pathelement location=".google_apis/gdata-books-2.1/gdata-books-1.0/gdata-books-1.0.jar"/>
+        <pathelement location=".google_apis/gdata-books-2.1/gdata-books-1.0/jsr305.jar"/>
+        <pathelement location=".google_apis/gdata-books-2.1/gdata-books-1.0/gdata-books-meta-1.0.jar"/>
+        <pathelement location=".google_apis/gdata-books-2.1/gdata-books-1.0/google-collect-1.0-rc1.jar"/>
+        <pathelement location=".google_apis/gdata-books-2.1/gdata-books-1.0/gdata-client-1.0.jar"/>
+    </path>
+    <path id="AndroK.classpath">
+        <pathelement location="bin/classes"/>
+        <path refid="Google APIs [Android 2.3.3].libraryclasspath"/>
+        <path refid="com.android.ide.eclipse.adt.LIBRARIES.libraryclasspath"/>
+        <path refid="GAL GWT Maps.libraryclasspath"/>
+        <path refid="Books.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin/classes"/>
+        <copy includeemptydirs="false" todir="bin/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin/classes">
+            <fileset dir="gen">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin/classes" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="AndroK.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin/classes" source="${source}" target="${target}">
+            <src path="gen"/>
+            <classpath refid="AndroK.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

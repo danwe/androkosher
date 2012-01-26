@@ -1,0 +1,17 @@
+{
+  "kind": "discovery#directoryItem",
+  "id": "gdata-books:1.0",
+  "name": "gdata-books",
+  "version": "2.1",
+  "title": "Books",
+  "publisher": "Google",
+  "description": "The Google Book Search Data API allows client applications to view and update Book Search content in the form of Google Data API feeds.",
+  "downloadLink": "static/gdata-books-1.0.zip",
+  "icons": {
+    "x16": "icons/gdata-books-16.png"
+  },
+  "tosLink": "http://code.google.com/terms.html",
+  "releaseDate": "2009-11-05",
+  "documentationLink": "http://code.google.com/apis/books/docs/gdata/developers_guide_java.html",
+  "preferred": true
+}
