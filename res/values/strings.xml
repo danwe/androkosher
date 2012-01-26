@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	 <string name="hello">Hello World, myMap!</string>
     <string name="dan">androkosher first Registration</string>
     <string name="app_name">AndroK</string>
     <string name="user">usa</string>
@@ -8,17 +8,34 @@
     <string name="password">password</string>
     <string name="androkosher">androkosher</string>
     <string name="login_title">login to the app</string>
-	<string name="login_text">\
-	<string name="app_name">Sudoku</string>
-	<string name="main_title">Android Sudoku</string>
-	<string name="continue_label">Continue</string>
-	<string name="new_game_label">New Game</string>
-	<string name="about_label">About</string>
-	<string name="exit_label">Exit</string>
-	Hello dan    
-	</string>
+	<string name="login_text"/>
+	
 	<string name="login_label">login</string>
+	<string name="search_title">search</string>
+	<string name="search_text"/>
+	<string name="search_label">search</string>
+	<string name="go_title">go</string>
+	<string name="go_text"/>
+	<string name="go_label">go</string>
 	
 	
+	<string name="list_prompt">choose City </string>
+    <string-array name="list_arrays">
+        <item>jerusalem</item>
+        <item>tel aviv</item>
+        <item>shomron</item>
+        <item>gaza strip</item>
+        <item>ramat hagolan</item>
+        <item>hagalil haelyon</item>
+        <item>krihat shmona</item>
+        <item>beher sheva</item>
+        <item>dimona</item>
+        <item>hertzeliya</item>>
+        <item>negev</item>
+        <item>eylat</item>
+        <item>other</item>
+    </string-array> 
+    
+    <string name="item_label">by category</string>
     
 </resources>
