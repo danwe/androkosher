@@ -47,19 +47,8 @@ public class Locate {
 				
 				in.close();
 				
-				//================================================================================
-				String [] splitted = (sb.toString()).split("<br/><br/>");
-				int COLS = 4;
-				int ROW = splitted.length;
-				String [][] location = new String[ROW][COLS];
+				return getPoints(sb);
 				
-				for(int i=0; i<ROW; i++){
-					String [] splitt = (splitted[i].toString()).split("<br/>");
-					for(int j=0; j<COLS; j++)
-					    location[i][j]=splitt[j].toString();
-				}
-				
-				return location;
 				} finally {
 					if (in != null) {
 						try {
@@ -69,6 +58,21 @@ public class Locate {
 						}
 					}
 				}
+			
+		}
+	
+		public String [][]getPoints(StringBuffer sb){
+			String [] splitted = (sb.toString()).split("<br/><br/>");
+			int COLS = 4;
+			int ROW = splitted.length;
+			String [][] location = new String[ROW][COLS];
+			
+			for(int i=0; i<ROW; i++){
+				    String [] spli =(splitted[i].toString()).split("<br/>");
+				    location[i] = spli;
+			}
+			
+			return location;
 			
 		}
 

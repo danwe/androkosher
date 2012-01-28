@@ -9,34 +9,33 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
-
 public class LayoutAnimationActivity extends Activity
 {
-	public Search search;
+	public GetData getData;
 	String value="";
+	String value2="";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_layout);
-		search = new Search();
+		getData = new GetData();
 		Bundle extras = getIntent().getExtras();
 		
-		     setupListView(extras);
+		setupListView(extras);
 	}
 	private void setupListView(Bundle extras)
 	{
 		String[] listItems = null;
 		
 		try {
-				if(extras !=null)
-					value = extras.getString("new_variable_name").toString();
-			
-			
+				if(extras !=null){
+					value = extras.getString("name").toString();
+				    value2 = extras.getString("street").toString();
+				}
 			//Get server data:
-			listItems = search.executeHttpGet("Resturants_Jerusalem", value);
+			listItems = getData.executeHttpGet("Resturants_Jerusalem", value.toString(), value2.toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

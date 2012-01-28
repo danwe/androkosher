@@ -33,14 +33,14 @@ import com.google.android.maps.OverlayItem;
 
 
 public class mymap extends MapActivity  implements LocationListener, OnClickListener {
-
-
+    public Locate locate;
 	MapView map;
 	long start;
 	long stop;
 	MyLocationOverlay compass;
 	MapController controller;
-	int x, y;
+	int x;
+	int y;
 	GeoPoint touchedPoint, rest1, rest2, rest3;
 	Drawable d, gpsSign;
 	List<Overlay> overlayList;
@@ -69,6 +69,7 @@ public class mymap extends MapActivity  implements LocationListener, OnClickList
 		compass = new MyLocationOverlay(mymap.this, map);
 		overlayList.add(compass);
 		controller = map.getController();
+		locate = new Locate();
 		//GeoPoint point = new GeoPoint(31783333, 35216667);
 
 		//controller.animateTo(point);
@@ -104,7 +105,12 @@ public class mymap extends MapActivity  implements LocationListener, OnClickList
 		}
 
 		createArray();
-		play();
+		try {
+			play();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	
@@ -279,11 +285,24 @@ public class mymap extends MapActivity  implements LocationListener, OnClickList
 		overlayList.add(custom);
 		onPause();
 	}
-	public void play(){
-		Item it1 = new Item(31.772725, 35.189767, "ima","jerusalem");
-		Item it2 = new Item(31.774513, 35.191183, "good","jerusalem");
-
-		oncreatepoint(it1);	
-		oncreatepoint(it2);
+	public void play() throws Exception{
+		String [][]points;
+		Toast.makeText(mymap.this, "get points", Toast.LENGTH_SHORT).show();
+		//Get all restaurants in Jerusalem from the server.
+		points = locate.executeHttpGet("Resturants_Jerusalem");
+		
+		Toast.makeText(mymap.this, "points set", Toast.LENGTH_SHORT).show();
+		
+		int pointNum = points.length;
+		int X_PLACE = 2;
+		int Y_PLACE = 3;
+		int NAME=1;
+	
+		for(int i=0; i<pointNum; i++){
+			double xPlace = Double.valueOf(points[i][X_PLACE].trim()).doubleValue();
+			double yPlace = Double.valueOf(points[i][Y_PLACE].trim()).doubleValue();
+			Item it1 = new Item(xPlace , yPlace, points[i][NAME].toString(),"Jersualem");
+			oncreatepoint(it1);
+		}
 	}
 }
