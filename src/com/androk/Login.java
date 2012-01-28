@@ -18,8 +18,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import android.widget.Toast;
-
 public class Login {
 	public boolean executeHttpGet(String user, String password) throws Exception {
 	BufferedReader in = null;
@@ -50,7 +48,7 @@ public class Login {
 		in.close();
 		String [] splitted = (sb.toString()).split("<br/>");
 		//Check values:
-		if(splitted[0].equals(user) && splitted[1].equals(password))
+		if(splitted[0].equals(user) && splitted[1].equals(password) && !splitted[0].equals(""))
 			return true;
 		
 		return false;

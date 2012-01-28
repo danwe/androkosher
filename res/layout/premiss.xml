@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="229dp"
+        android:layout_height="283dp"
+        android:src="@drawable/logo3" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView1"
+        android:layout_width="276dp"
+        android:layout_height="116dp"
+        android:gravity="bottom"
+        android:text="Permissions
+Product may be used only for private
+Do not steal or duplicate copy change the code.
+Enjoy" />
+
+</LinearLayout>

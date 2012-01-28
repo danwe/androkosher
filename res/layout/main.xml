@@ -2,27 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
-    android:gravity="bottom"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/dan" />
-
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="fill_parent"
-        android:layout_height="61dp"
-        android:layout_weight="1.00"
+        android:layout_width="188dp"
+        android:layout_height="269dp"
         android:src="@drawable/logo3" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
         android:text="@string/user1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
