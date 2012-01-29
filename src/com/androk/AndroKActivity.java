@@ -20,7 +20,7 @@ public class AndroKActivity extends Activity implements OnClickListener
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.premiss);
+		//setContentView(R.layout.premiss);
 		
 		setContentView(R.layout.main);
 		
